@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 interface  ArtisteGallery {
@@ -9,12 +8,20 @@ interface  ArtisteGallery {
     genreMusical: string;
     ville: string;
     image: string;
-    categories: string; 
-    reseauxSociaux: reseauSociaux[],
-  }
-  interface reseauSociaux{
-        nom: string;
-        url: string;
+    categories: string;
+
+    social_link_1: string;
+    social_link_1_icon: string;
+    social_link_2: string;
+    social_link_2_icon: string;
+    social_link_3: string;
+    social_link_3_icon: string;
+    social_link_4: string;
+    social_link_4_icon: string;
+    social_link_5: string;
+    social_link_5_icon: string;
+    social_link_6: string;
+    social_link_6_icon: string;
 
   }
   const artistes: ArtisteProps[] = [
@@ -25,10 +32,6 @@ interface  ArtisteGallery {
       ville: "Nantes",
       imageSrc: "/artsec/1.png",
       categories: ["tous", "360"],
-      reseauxSociaux: [
-        { nom: "spotify", url: "https://spotify.com/artiste1" },
-        // Autres réseaux sociaux
-      ],
     },
     {
         id: 2,
@@ -37,10 +40,6 @@ interface  ArtisteGallery {
         ville: "Lyon",
         imageSrc: "/artsec/2.png",
         categories: ["management"],
-        reseauxSociaux: [
-            { nom: "spotify", url: "https://spotify.com/artiste1" },
-            // Autres réseaux sociaux
-          ],
       },
       {
         id: 3,
@@ -49,10 +48,6 @@ interface  ArtisteGallery {
         ville: "Marseille",
         imageSrc: "/artsec/3.png",
         categories: ["distribution"],
-        reseauxSociaux: [
-            { nom: "spotify", url: "https://spotify.com/artiste1" },
-            // Autres réseaux sociaux
-          ],
       },
       {
         id: 4,
@@ -61,10 +56,6 @@ interface  ArtisteGallery {
         ville: "Bordeaux",
         imageSrc: "/artsec/4.png",
         categories: ["licence"],
-        reseauxSociaux: [
-            { nom: "spotify", url: "https://spotify.com/artiste1" },
-            // Autres réseaux sociaux
-          ],
       },
       {
         id: 5,
@@ -73,10 +64,6 @@ interface  ArtisteGallery {
         ville: "Nantes",
         imageSrc: "/artsec/5.png",
         categories: ["booking"],
-        reseauxSociaux: [
-            { nom: "spotify", url: "https://spotify.com/artiste1" },
-            // Autres réseaux sociaux
-          ],
       },
       {
         id: 6,
@@ -85,10 +72,6 @@ interface  ArtisteGallery {
         ville: "Strasbourg",
         imageSrc: "/artsec/6.png",
         categories: ["360", "management"],
-        reseauxSociaux: [
-            { nom: "spotify", url: "https://spotify.com/artiste1" },
-            // Autres réseaux sociaux
-          ],
       },
     // Ajoutez d'autres artistes ici
   ];
@@ -123,21 +106,12 @@ interface  ArtisteGallery {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-[175px] p-6 justify-items-center">
         {artistesFiltres.map((artiste) => (
-          <div key={artiste.id} className="relative h-[300px] w-[250px] rounded-lg ">
-             <div className="flex flex-col justify-center mr-4">
-              {artiste.reseauSociaux.map(( reseauxSociaux) => (
-                <Link key={ reseauxSociaux.nom} href={ reseauxSociaux.url}>
-                  <a target="_blank" rel="noopener noreferrer" className="hover:text-red-500 mb-2">
-                    <i className={`bx bxl-${ reseauxSociaux.nom}`}></i>
-                  </a>
-                </Link>
-              ))}
-            </div>
+          <div key={artiste.id} className="h-[300px] w-[250px] rounded-lg ">
             <div className="w-full h-full relative">
             <Image src={artiste.imageSrc} alt={artiste.nom}  layout="fill"
           objectFit="cover"   className="rounded-lg"/>
           </div>
-            <div className="mt-6 text-center">
+            <div className="mt-6 text-center ">
               <h3 className="text-xl font-bold">{artiste.nom}</h3>
               <p className="text-xs text-[#8f1e1e] font-semibold">{`${artiste.genreMusical.toUpperCase()}`}</p>
               <p className="text-xs  font-medium">{artiste.ville}</p>
