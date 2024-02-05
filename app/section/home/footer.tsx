@@ -1,8 +1,8 @@
 import Link from 'next/link';
 const Footer = () => {
     return ( 
-        <footer className="bg-black text-white w-full">
-        <div className="container mx-auto px-4 py-10">
+        <footer className="absolute bg-black text-white w-full">
+        <div className=" mx-auto px-4 py-10">
           {/* Section d'inscription à la newsletter avec un fond rouge */}
           <div className="bg-red-500 p-6 rounded-lg shadow-md text-center w-full">
             <h2 className="text-2xl mb-2 font-bold">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h2>
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
   
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 left-[30px]">
             <p>© 2023 BRAZIERECORDS. Made with love.</p>
           </div>
         </div>

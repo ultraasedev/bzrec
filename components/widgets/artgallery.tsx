@@ -88,7 +88,7 @@ interface  ArtisteGallery {
 
 
     return ( 
-    <section className="relative h-[1200px] w-full bg-black text-white">
+    <section className="relative h-[1200px] w-full bg-black text-white" id="art_section">
   <div className="bg-black text-white">
       <div className="text-center py-8">
         <h1 className="text-4xl font-bold">NOS ARTISTES</h1>
